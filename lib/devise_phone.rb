@@ -1,5 +1,4 @@
 require "devise"
-require "twilio-ruby"
 
 $: << File.expand_path("..", __FILE__)
 
