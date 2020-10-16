@@ -5,7 +5,7 @@ require 'devise_phone/version'
 
 Gem::Specification.new do |s|
   s.name         = "devise_phone"
-  s.version      = "1.27"
+  s.version      = DevisePhone::VERSION
   s.authors      = [""]
   s.email        = [""]
   s.homepage     = ""
