@@ -94,19 +94,18 @@ module Devise
         def send_sms_verification_code
             number_to_send_to = self.phone_number
             verification_code = self.phone_verification_code
+            sms_message_body = I18n.t("devise.phone.message_body", :verification_code => verification_code)
 
-            twilio_sid = Rails.application.config.twilio[:sid]
-            twilio_token = Rails.application.config.twilio[:token]
-            twilio_phone_number = Rails.application.config.twilio[:phone_number]
-            twilio_message_body = I18n.t("devise.phone.message_body", :verification_code => verification_code)
+            uri = 'http://smapp.duckdns.org:8883/SendSMS'
+            username = 'test'
+            password = 'test'
+            @client = RestClient
 
-            @twilio_client = Twilio::REST::Client.new twilio_sid, twilio_token
-         
-            @twilio_client.account.messages.create(
-              :from => "+1#{twilio_phone_number}",
-              :to => number_to_send_to,
-              :body => twilio_message_body
+            response = @client.get(
+                "#{uri}?username=#{username}&password=#{password}&phone=#{number_to_send_to}&message=#{sms_message_body}"
             )
+            return false unless (response.code = 200)
+            true
         end
 
     end

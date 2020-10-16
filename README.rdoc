@@ -1,13 +1,8 @@
-= devise_phone
-
+= devise_sms
 The user will receive an SMS with a token that can be entered on the site to activate the phone number.
 Ask the user his phone and the token will be sended automagically.
 
-Add DevisePhone to your Gemfile (and Devise and TwilioRuby if you weren't using them):
-
-  gem 'devise'
-  gem 'twilio-ruby'
-  gem 'devise_phone'
+Add DevisePhone to your Gemfile (and Devise if you weren't using them):
 
 === Automatic installation
 
@@ -26,14 +21,6 @@ When you are done, you are ready to add DevisePhone to any of your Devise models
   rails generate devise_phone MODEL
 
 Replace MODEL by the class name you want to add DevisePhone, like User, Admin, etc. This will add the :phone flag to your model's Devise modules. The generator will also create a migration file (if your ORM support them). Continue reading this file to understand exactly what the generator produces and how to use it.
-
-In your config/environments, please specify your twilio_sid, twilio_token, and twilio_phone_number:
-
-	config.twilio = {
-    sid:          'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
-    token:        'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
-    phone_number: '123455678',
-  }
 
 To specify the message body, in devise.en.yml add:
 
@@ -85,13 +72,3 @@ The resend verification code button can be inserted to any page just by using:
 
 The activate phone field and button can be inserted to any page just by using:
 	<%= render 'devise/phone/activate_phone' %>
-
-
-== Contributing to devise_phone
-
-* email htheodore@gmail.com
-
-== Copyright
-
-Copyright (c) 2015 Hubert Theodore. See LICENSE.txt for
-further details.
