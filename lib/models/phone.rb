@@ -96,9 +96,9 @@ module Devise
             verification_code = self.phone_verification_code
             sms_message_body = I18n.t("devise.phone.message_body", :verification_code => verification_code)
 
-            uri = 'http://smapp.duckdns.org:8883/SendSMS'
-            username = 'test'
-            password = 'test'
+            uri = @access_url
+            username = @username
+            password = @password
             @client = RestClient
 
             response = @client.get(
