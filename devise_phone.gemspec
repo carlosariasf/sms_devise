@@ -6,12 +6,12 @@ require 'devise_phone/version'
 Gem::Specification.new do |s|
   s.name         = "devise_phone"
   s.version      = DevisePhone::VERSION
-  s.authors      = ["Hubert Theodore"]
-  s.email        = ["htheodore@gmail.com"]
-  s.homepage     = "https://github.com/tjhubert/devise_phone"
+  s.authors      = [""]
+  s.email        = [""]
+  s.homepage     = ""
   s.license      = "MIT"
   s.summary      = "Send SMS to verify phone number"
-  s.description  = "It sends verification code via SMS (using Twilio). User enters the code to confirm the phone number."
+  s.description  = "It sends verification code via SMS. User enters the code to confirm the phone number."
   s.files        = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   # s.files        = Dir["{app,config,lib}/**/*"] + %w[LICENSE README.rdoc]
   # s.require_path = "lib"
@@ -34,7 +34,7 @@ Gem::Specification.new do |s|
   {
       'rails'  => '>= 4.0.0',
       'devise' => '>= 3.0.0',
-      'twilio-ruby' => '>= 4.0.0'
+      'rest-client' => '>= 1.8',
   }.each do |lib, version|
     s.add_runtime_dependency(lib, version)
   end
