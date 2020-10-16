@@ -24,9 +24,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   {
-      'bundler'     => '~> 1.10',
       # 'rspec',
-      'rake'        => '~> 10.0'
   }.each do |lib, version|
     s.add_development_dependency(lib, version)
   end
