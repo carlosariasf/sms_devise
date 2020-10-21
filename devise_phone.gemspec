@@ -32,7 +32,6 @@ Gem::Specification.new do |s|
   {
       'rails'  => '>= 4.0.0',
       'devise' => '>= 3.0.0',
-      'rest-client' => '>= 1.8',
   }.each do |lib, version|
     s.add_runtime_dependency(lib, version)
   end

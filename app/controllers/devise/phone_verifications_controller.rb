@@ -1,4 +1,5 @@
 class Devise::PhoneVerificationsController < DeviseController
+  include ActionController::MimeResponds
 
   # GET /resource/phone_verification/new
   # def new
@@ -19,7 +20,7 @@ class Devise::PhoneVerificationsController < DeviseController
       format.json  { render :json => msg } # don't do msg.to_json
     end
   end
-  
+
   # GET or POST /resource/phone_verification/verify_code
   def verify_code
     verify_success = current_user.verify_phone_number_with_code_entered(params[:code_entered])
